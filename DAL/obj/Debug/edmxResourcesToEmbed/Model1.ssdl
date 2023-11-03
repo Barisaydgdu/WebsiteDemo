@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="webSiteDemoModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="LogType">
+    <Key>
+      <PropertyRef Name="LogTypeID" />
+    </Key>
+    <Property Name="LogTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LogTypeName" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Email" Type="varchar(max)" />
+    <Property Name="Password" Type="varchar(max)" />
+    <Property Name="Name" Type="varchar(max)" />
+    <Property Name="Surname" Type="varchar(max)" />
+    <Property Name="RegisterDate" Type="varchar(max)" />
+    <Property Name="AuthorizationTypeID" Type="int" />
+  </EntityType>
+  <EntityType Name="UserAuthorization">
+    <Key>
+      <PropertyRef Name="UserAuthorizationID" />
+    </Key>
+    <Property Name="UserAuthorizationID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserAuthorizationTypeID" Type="int" />
+    <Property Name="UserAuthorizationName" Type="nvarchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="UserLog">
+    <Key>
+      <PropertyRef Name="LogID" />
+    </Key>
+    <Property Name="LogID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LogTypeID" Type="int" />
+    <Property Name="RegisterDate" Type="datetime" />
+    <Property Name="PCIP" Type="varchar(max)" />
+    <Property Name="LogCaption" Type="varchar(max)" />
+    <Property Name="LogUserID" Type="int" />
+  </EntityType>
+  <Association Name="FK_User_UserAuthorization">
+    <End Role="UserAuthorization" Type="Self.UserAuthorization" Multiplicity="0..1" />
+    <End Role="User" Type="Self.User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserAuthorization">
+        <PropertyRef Name="UserAuthorizationID" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="AuthorizationTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserLog_LogType">
+    <End Role="LogType" Type="Self.LogType" Multiplicity="0..1" />
+    <End Role="UserLog" Type="Self.UserLog" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LogType">
+        <PropertyRef Name="LogTypeID" />
+      </Principal>
+      <Dependent Role="UserLog">
+        <PropertyRef Name="LogTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="webSiteDemoModelStoreContainer">
+    <EntitySet Name="LogType" EntityType="Self.LogType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserAuthorization" EntityType="Self.UserAuthorization" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserLog" EntityType="Self.UserLog" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_User_UserAuthorization" Association="Self.FK_User_UserAuthorization">
+      <End Role="UserAuthorization" EntitySet="UserAuthorization" />
+      <End Role="User" EntitySet="User" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserLog_LogType" Association="Self.FK_UserLog_LogType">
+      <End Role="LogType" EntitySet="LogType" />
+      <End Role="UserLog" EntitySet="UserLog" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
