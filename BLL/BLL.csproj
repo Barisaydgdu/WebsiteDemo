@@ -75,9 +75,19 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Web.config" />
+    <Content Include="WebsiteTest.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLLUser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WebSiteDemoBase.cs" />
+    <Compile Include="WebsiteTest.aspx.cs">
+      <DependentUpon>WebsiteTest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebsiteTest.aspx.designer.cs">
+      <DependentUpon>WebsiteTest.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -19,8 +19,9 @@ namespace DAL
         public string Password { get; set; }
         public string Name { get; set; }
         public string Surname { get; set; }
-        public string RegisterDate { get; set; }
+        public System.DateTime RegisterDate { get; set; }
         public Nullable<int> AuthorizationTypeID { get; set; }
+        public Nullable<bool> UserActivity { get; set; }
     
         public virtual UserAuthorization UserAuthorization { get; set; }
     }

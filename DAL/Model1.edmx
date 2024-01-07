@@ -31,8 +31,9 @@
           <Property Name="Password" Type="varchar(max)" />
           <Property Name="Name" Type="varchar(max)" />
           <Property Name="Surname" Type="varchar(max)" />
-          <Property Name="RegisterDate" Type="varchar(max)" />
+          <Property Name="RegisterDate" Type="datetime" Nullable="false" />
           <Property Name="AuthorizationTypeID" Type="int" />
+          <Property Name="UserActivity" Type="bit" />
         </EntityType>
         <EntityType Name="UserAuthorization">
           <Key>
@@ -53,7 +54,7 @@
           <Property Name="LogCaption" Type="varchar(max)" />
           <Property Name="LogUserID" Type="int" />
         </EntityType>
-        <Association Name="FK_User_UserAuthorization">
+        <Association Name="FK_User_UserAuthorization1">
           <End Role="UserAuthorization" Type="Self.UserAuthorization" Multiplicity="0..1" />
           <End Role="User" Type="Self.User" Multiplicity="*" />
           <ReferentialConstraint>
@@ -65,31 +66,15 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_UserLog_LogType">
-          <End Role="LogType" Type="Self.LogType" Multiplicity="0..1" />
-          <End Role="UserLog" Type="Self.UserLog" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="LogType">
-              <PropertyRef Name="LogTypeID" />
-            </Principal>
-            <Dependent Role="UserLog">
-              <PropertyRef Name="LogTypeID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityContainer Name="webSiteDemoModelStoreContainer">
           <EntitySet Name="LogType" EntityType="Self.LogType" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="UserAuthorization" EntityType="Self.UserAuthorization" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="UserLog" EntityType="Self.UserLog" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK_User_UserAuthorization" Association="Self.FK_User_UserAuthorization">
+          <AssociationSet Name="FK_User_UserAuthorization1" Association="Self.FK_User_UserAuthorization1">
             <End Role="UserAuthorization" EntitySet="UserAuthorization" />
             <End Role="User" EntitySet="User" />
-          </AssociationSet>
-          <AssociationSet Name="FK_UserLog_LogType" Association="Self.FK_UserLog_LogType">
-            <End Role="LogType" EntitySet="LogType" />
-            <End Role="UserLog" EntitySet="UserLog" />
           </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
@@ -123,9 +108,10 @@
           <Property Name="Password" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="Surname" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="RegisterDate" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="RegisterDate" Type="DateTime" Nullable="false" />
           <Property Name="AuthorizationTypeID" Type="Int32" />
           <NavigationProperty Name="UserAuthorization" Relationship="Self.FK_User_UserAuthorization" FromRole="User" ToRole="UserAuthorization" />
+          <Property Name="UserActivity" Type="Boolean" />
         </EntityType>
         <EntityType Name="UserAuthorization">
           <Key>
@@ -215,6 +201,7 @@
           <EntitySetMapping Name="User">
             <EntityTypeMapping TypeName="webSiteDemoModel.User">
               <MappingFragment StoreEntitySet="User">
+                <ScalarProperty Name="UserActivity" ColumnName="UserActivity" />
                 <ScalarProperty Name="UserID" ColumnName="UserID" />
                 <ScalarProperty Name="Email" ColumnName="Email" />
                 <ScalarProperty Name="Password" ColumnName="Password" />
