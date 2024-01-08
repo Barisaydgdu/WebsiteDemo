@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Regıster.aspx.cs" Inherits="WebSiteDemo.Admin.Regıster" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="UserRegister.aspx.cs" Inherits="WebSiteDemo.Admin.Regıster" %>
 
 <!DOCTYPE html>
 
@@ -55,7 +55,7 @@
                       <asp:Label ID="lblMesaj" runat="server"></asp:Label>
                     
                   </div>
-                  <div class="text-center mt-4 font-weight-light"> Zaten Hesabın Var Mı? <a href="login.html" class="text-primary">Giriş Yap</a>
+                  <div class="text-center mt-4 font-weight-light"> Zaten Hesabın Var Mı? <a href="userLogin.aspx" class="text-primary">Giriş Yap</a>
                   </div>
                 </form>
               </div>

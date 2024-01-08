@@ -43,6 +43,8 @@ namespace WebSiteDemo.Admin
             {
                 lblMesaj.Text = "E-posta Adresi Kullaniliyor.";
             }
+
+
         }
     }
 }

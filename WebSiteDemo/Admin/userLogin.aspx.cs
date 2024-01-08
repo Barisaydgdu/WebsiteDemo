@@ -14,5 +14,20 @@ namespace WebSiteDemo.Admin
 
         }
 
+        protected void btnUserGiris(object sender, EventArgs e)
+        {
+            string email = txtUserLoginEmail.Value;
+            string password = txtUserLoginPassword.Value;
+
+            var sonuc = new BLL.BLLUser().UserControl(email, password);
+            if (sonuc.Count>0)
+            {
+                lblUserMessage.Text = "Giriş Başarılı.";
+            }
+            else
+            {
+                lblUserMessage.Text = "Kullanıcı Adı veya Şifre Hatalı.";
+            }
+        }
     }
 }

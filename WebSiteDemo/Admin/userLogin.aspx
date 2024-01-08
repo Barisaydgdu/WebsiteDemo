@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="userLogin.aspx.cs" Inherits="WebSiteDemo.Admin.userLogin" %>
+
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <!-- Required meta tags -->
@@ -33,13 +35,15 @@
                 <h6 class="font-weight-light">Üye Ol</h6>
                 <form runat="server" class="pt-3">
                   <div class="form-group">
-                    <input type="email" class="form-control form-control-lg" id="exampleInputEmail1" placeholder="Eposta">
+                    <input type="email" class="form-control form-control-lg" runat="server" id="txtUserLoginEmail" placeholder="Eposta">
                   </div>
                   <div class="form-group">
-                    <input type="password" class="form-control form-control-lg" id="exampleInputPassword1" placeholder="Şifre">
+                    <input type="password" class="form-control form-control-lg" runat="server" id="txtUserLoginPassword" placeholder="Şifre">
                   </div>
                   <div class="mt-3">
-                    <asp:Button ID="btnAdminGiris" class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" runat="server" Text="GİRİŞ YAP" />
+                    <asp:Button ID="BtnUserGiris" class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" runat="server" Text="GİRİŞ YAP" OnClick="btnUserGiris" />
+                    
+                      <asp:Label ID="lblUserMessage" runat="server"></asp:Label>
                     
                   </div>
                   <div class="my-2 d-flex justify-content-between align-items-center">
@@ -50,7 +54,7 @@
                     <a href="#" class="auth-link text-black">Şifremi Unuttum</a>
                   </div>
                   
-                  <div class="text-center mt-4 font-weight-light"> Hesabınız Yok Mu? <a href="register.html" class="text-primary">Oluştur</a>
+                  <div class="text-center mt-4 font-weight-light"> Hesabınız Yok Mu? <a href="UserRegister.aspx" class="text-primary">Oluştur</a>
                   </div>
                 </form>
               </div>

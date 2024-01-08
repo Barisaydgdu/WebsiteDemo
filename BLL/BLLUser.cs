@@ -28,5 +28,12 @@ namespace BLL
             vt.SaveChanges();
             return true;
         }
+        public List<DAL.User> UserControl(string email, string password)
+        {
+            DAL.webSiteDemoEntities1 vt = new DAL.webSiteDemoEntities1();
+            return vt.User.Where(p => p.Email == email && p.Password == password && p.UserActivity == true).ToList();
+
+
+        }
     }
 }

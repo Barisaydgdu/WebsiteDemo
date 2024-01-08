@@ -1651,9 +1651,9 @@
     <Content Include="Admin\ConnectPlusAdmin-Free-Bootstrap-Admin-Template-master\template\partials\_footer.html" />
     <Content Include="Admin\ConnectPlusAdmin-Free-Bootstrap-Admin-Template-master\template\partials\_navbar.html" />
     <Content Include="Admin\ConnectPlusAdmin-Free-Bootstrap-Admin-Template-master\template\partials\_sidebar.html" />
-    <Content Include="Admin\Regıster.aspx" />
-    <Content Include="Admin\test.aspx" />
     <Content Include="Admin\userLogin.aspx" />
+    <Content Include="Admin\UserRegister.aspx" />
+    <Content Include="Admin\test.aspx" />
     <Content Include="Public\assets\bootstrap\css\bootstrap-grid.css" />
     <Content Include="Public\assets\bootstrap\css\bootstrap-grid.min.css" />
     <Content Include="Public\assets\bootstrap\css\bootstrap-reboot.css" />
@@ -1828,12 +1828,19 @@
     <Compile Include="Admin\AdminMain.Master.designer.cs">
       <DependentUpon>AdminMain.Master</DependentUpon>
     </Compile>
-    <Compile Include="Admin\Regıster.aspx.cs">
-      <DependentUpon>Regıster.aspx</DependentUpon>
+    <Compile Include="Admin\userLogin.aspx.cs">
+      <DependentUpon>userLogin.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\Regıster.aspx.designer.cs">
-      <DependentUpon>Regıster.aspx</DependentUpon>
+    <Compile Include="Admin\userLogin.aspx.designer.cs">
+      <DependentUpon>userLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\UserRegister.aspx.cs">
+      <DependentUpon>UserRegister.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\UserRegister.aspx.designer.cs">
+      <DependentUpon>UserRegister.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\test.aspx.cs">
       <DependentUpon>test.aspx</DependentUpon>
@@ -1841,13 +1848,6 @@
     </Compile>
     <Compile Include="Admin\test.aspx.designer.cs">
       <DependentUpon>test.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Admin\userLogin.aspx.cs">
-      <DependentUpon>userLogin.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Admin\userLogin.aspx.designer.cs">
-      <DependentUpon>userLogin.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Public\test.aspx.cs">
