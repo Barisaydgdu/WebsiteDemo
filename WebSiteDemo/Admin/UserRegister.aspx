@@ -35,8 +35,15 @@
                 <h4>Burada Yeni Misin?</h4>
                 <h6 class="font-weight-light">Birkaç adımla Kolayca Üye Ol</h6>
                 <form runat="server" class="pt-3">
+                     <div class="form-group">
+
+                         <input  class="form-control form-control-lg" runat="server" id="txtAd" placeholder="Adınız"/>
+                     </div>
+                     <div class="form-group">
+                         <input  class="form-control form-control-lg" runat="server" id="txtSoyad" placeholder="Soyadınız"/>
+                    </div>
                   
-                   <div class="form-group">
+                    <div class="form-group">
                         <input type="email" class="form-control form-control-lg" runat="server" id="txtEmail" placeholder="Email"/>
                     </div>
  

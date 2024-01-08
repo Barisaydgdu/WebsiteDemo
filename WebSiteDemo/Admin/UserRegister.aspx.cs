@@ -18,12 +18,16 @@ namespace WebSiteDemo.Admin
         {
             string email = txtEmail.Value;
             string password = txtPassword1.Value;
+            string name = txtAd.Value;
+            string surname = txtSoyad.Value;
 
             var sonuc = new BLL.BLLUser().KullaniciAdiKulaniliyorMu(email);
 
             if (sonuc)
             {
                 DAL.User entity = new DAL.User();
+                entity.Name = name;
+                entity.Surname = surname;
                 entity.Email = email;
                 entity.Password = password;
                 entity.RegisterDate = DateTime.Now;
