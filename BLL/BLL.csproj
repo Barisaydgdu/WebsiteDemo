@@ -79,7 +79,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BLLUser.cs" />
+    <Compile Include="BllUserLog.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WebsiteBase.cs" />
     <Compile Include="WebSiteDemoBase.cs" />
     <Compile Include="WebsiteTest.aspx.cs">
       <DependentUpon>WebsiteTest.aspx</DependentUpon>

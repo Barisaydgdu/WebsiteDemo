@@ -47,6 +47,7 @@
          </div>
        </form>
      </div>
+     
 
      <ul class="navbar-nav navbar-nav-right">
        <li class="nav-item  dropdown d-none d-md-block">
@@ -57,7 +58,8 @@
              <img src="assets/images/faces/face28.png" alt="image">
            </div>
            <div class="nav-profile-text">
-             <p class="mb-1 text-black">Barış Aydoğdu</p>
+             <p class="mb-1 text-black">Hoşgeldiniz</p>
+             <asp:Label ID="lblNameSurname" runat="server" Text=""></asp:Label>
            </div>
          </a>
          <div class="dropdown-menu navbar-dropdown dropdown-menu-right p-0 border-0 font-size-sm" aria-labelledby="profileDropdown" data-x-placement="bottom-end">
@@ -91,7 +93,8 @@
                <i class="mdi mdi-lock ms-1"></i>
              </a>
              <a class="dropdown-item py-1 d-flex align-items-center justify-content-between" href="#">
-               <span>Log Out</span>
+               <asp:LinkButton ID="lnkLogOut" class="dropdown-item py-1 d-flex align-items-center justify-content-between" runat="server" OnClick="lnklogOut_Click">Log Out</asp:LinkButton>
+               
                <i class="mdi mdi-logout ms-1"></i>
              </a>
            </div>
@@ -206,12 +209,12 @@
      <li class="nav-item">
        <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
          <span class="icon-bg"><i class="mdi mdi-crosshairs-gps menu-icon"></i></span>
-         <span class="menu-title">UI Elements</span>
+         <span class="menu-title">Kullanıcı İşlemleri</span>
          <i class="menu-arrow"></i>
        </a>
        <div class="collapse" id="ui-basic">
          <ul class="nav flex-column sub-menu">
-           <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.html">Buttons</a></li>
+           <li class="nav-item"> <a class="nav-link" href="KullaniciYonetim.aspx">Kullanıcı Listesi</a></li>
            <li class="nav-item"> <a class="nav-link" href="pages/ui-features/dropdowns.html">Dropdowns</a></li>
            <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Typography</a></li>
          </ul>

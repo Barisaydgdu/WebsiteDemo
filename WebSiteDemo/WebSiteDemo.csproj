@@ -1651,6 +1651,8 @@
     <Content Include="Admin\ConnectPlusAdmin-Free-Bootstrap-Admin-Template-master\template\partials\_footer.html" />
     <Content Include="Admin\ConnectPlusAdmin-Free-Bootstrap-Admin-Template-master\template\partials\_navbar.html" />
     <Content Include="Admin\ConnectPlusAdmin-Free-Bootstrap-Admin-Template-master\template\partials\_sidebar.html" />
+    <Content Include="Admin\index.aspx" />
+    <Content Include="Admin\KullaniciYonetim.aspx" />
     <Content Include="Admin\userLogin.aspx" />
     <Content Include="Admin\UserRegister.aspx" />
     <Content Include="Admin\test.aspx" />
@@ -1827,6 +1829,20 @@
     </Compile>
     <Compile Include="Admin\AdminMain.Master.designer.cs">
       <DependentUpon>AdminMain.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\KullaniciYonetim.aspx.cs">
+      <DependentUpon>KullaniciYonetim.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\KullaniciYonetim.aspx.designer.cs">
+      <DependentUpon>KullaniciYonetim.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\userLogin.aspx.cs">
       <DependentUpon>userLogin.aspx</DependentUpon>
