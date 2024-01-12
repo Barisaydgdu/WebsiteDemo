@@ -30,5 +30,11 @@ namespace DAL
         public virtual DbSet<User> User { get; set; }
         public virtual DbSet<UserAuthorization> UserAuthorization { get; set; }
         public virtual DbSet<UserLog> UserLog { get; set; }
+        public virtual DbSet<About> About { get; set; }
+        public virtual DbSet<AltSlider> AltSlider { get; set; }
+        public virtual DbSet<DealOfTheMonth> DealOfTheMonth { get; set; }
+        public virtual DbSet<Navbar> Navbar { get; set; }
+        public virtual DbSet<News> News { get; set; }
+        public virtual DbSet<Product> Product { get; set; }
     }
 }

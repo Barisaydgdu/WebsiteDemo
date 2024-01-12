@@ -74,6 +74,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Admin\AltSliderYonetimi.aspx" />
     <Content Include="Admin\assets\css\style.css" />
     <Content Include="Admin\assets\images\auth\lockscreen-bg.jpg" />
     <Content Include="Admin\assets\images\auth\login-bg.jpg" />
@@ -1652,6 +1653,7 @@
     <Content Include="Admin\ConnectPlusAdmin-Free-Bootstrap-Admin-Template-master\template\partials\_navbar.html" />
     <Content Include="Admin\ConnectPlusAdmin-Free-Bootstrap-Admin-Template-master\template\partials\_sidebar.html" />
     <Content Include="Admin\index.aspx" />
+    <Content Include="Admin\KullaniciEkleme.aspx" />
     <Content Include="Admin\KullaniciYonetim.aspx" />
     <Content Include="Admin\userLogin.aspx" />
     <Content Include="Admin\UserRegister.aspx" />
@@ -1830,12 +1832,26 @@
     <Compile Include="Admin\AdminMain.Master.designer.cs">
       <DependentUpon>AdminMain.Master</DependentUpon>
     </Compile>
+    <Compile Include="Admin\AltSliderYonetimi.aspx.cs">
+      <DependentUpon>AltSliderYonetimi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AltSliderYonetimi.aspx.designer.cs">
+      <DependentUpon>AltSliderYonetimi.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\index.aspx.cs">
       <DependentUpon>index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Admin\index.aspx.designer.cs">
       <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\KullaniciEkleme.aspx.cs">
+      <DependentUpon>KullaniciEkleme.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\KullaniciEkleme.aspx.designer.cs">
+      <DependentUpon>KullaniciEkleme.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\KullaniciYonetim.aspx.cs">
       <DependentUpon>KullaniciYonetim.aspx</DependentUpon>
@@ -1989,7 +2005,6 @@
     <Content Include="Admin\ConnectPlusAdmin-Free-Bootstrap-Admin-Template-master\template\package-lock.json" />
     <Content Include="Admin\ConnectPlusAdmin-Free-Bootstrap-Admin-Template-master\template\package.json" />
     <Content Include="Admin\ConnectPlusAdmin-Free-Bootstrap-Admin-Template-master\template\pages\.DS_Store" />
-    <Content Include="Admin\AdminMain.Master" />
     <Content Include="Admin\assets\.DS_Store" />
     <Content Include="Admin\assets\css\style.css.map" />
     <Content Include="Admin\assets\fonts\.DS_Store" />
@@ -2090,6 +2105,7 @@
     <Content Include="Admin\assets\vendors\mdi\fonts\materialdesignicons-webfont.ttf" />
     <Content Include="Admin\assets\vendors\mdi\fonts\materialdesignicons-webfont.woff" />
     <Content Include="Admin\assets\vendors\mdi\fonts\materialdesignicons-webfont.woff2" />
+    <Content Include="Admin\AdminMain.Master" />
     <None Include="packages.config" />
     <Content Include="Public\fruitkha-1.0.0\assets\bootstrap\css\bootstrap-grid.css.map" />
     <Content Include="Public\fruitkha-1.0.0\assets\bootstrap\css\bootstrap-grid.min.css.map" />
@@ -2234,7 +2250,9 @@
       <Name>DAL</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Resimler\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

@@ -55,5 +55,81 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="About">
+      <EntityTypeMapping TypeName="webSiteDemoModel.About">
+        <MappingFragment StoreEntitySet="About">
+          <ScalarProperty Name="activity" ColumnName="activity" />
+          <ScalarProperty Name="aboutLinks" ColumnName="aboutLinks" />
+          <ScalarProperty Name="aboutHeader" ColumnName="aboutHeader" />
+          <ScalarProperty Name="aboutCaption" ColumnName="aboutCaption" />
+          <ScalarProperty Name="aboutID" ColumnName="aboutID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AltSlider">
+      <EntityTypeMapping TypeName="webSiteDemoModel.AltSlider">
+        <MappingFragment StoreEntitySet="AltSlider">
+          <ScalarProperty Name="SiraNo" ColumnName="SiraNo" />
+          <ScalarProperty Name="aktiflikDurumu" ColumnName="aktiflikDurumu" />
+          <ScalarProperty Name="EklenmeTarihi" ColumnName="EklenmeTarihi" />
+          <ScalarProperty Name="TamMetin" ColumnName="TamMetin" />
+          <ScalarProperty Name="ImgUrl" ColumnName="ImgUrl" />
+          <ScalarProperty Name="OzetMetin" ColumnName="OzetMetin" />
+          <ScalarProperty Name="Baslik" ColumnName="Baslik" />
+          <ScalarProperty Name="AltSliderID" ColumnName="AltSliderID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DealOfTheMonth">
+      <EntityTypeMapping TypeName="webSiteDemoModel.DealOfTheMonth">
+        <MappingFragment StoreEntitySet="DealOfTheMonth">
+          <ScalarProperty Name="activity" ColumnName="activity" />
+          <ScalarProperty Name="dealImage" ColumnName="dealImage" />
+          <ScalarProperty Name="dealCaption" ColumnName="dealCaption" />
+          <ScalarProperty Name="dealHeader" ColumnName="dealHeader" />
+          <ScalarProperty Name="dealID" ColumnName="dealID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Navbar">
+      <EntityTypeMapping TypeName="webSiteDemoModel.Navbar">
+        <MappingFragment StoreEntitySet="Navbar">
+          <ScalarProperty Name="logo" ColumnName="logo" />
+          <ScalarProperty Name="icons" ColumnName="icons" />
+          <ScalarProperty Name="header" ColumnName="header" />
+          <ScalarProperty Name="queueNo" ColumnName="queueNo" />
+          <ScalarProperty Name="aktivity" ColumnName="aktivity" />
+          <ScalarProperty Name="navbarID" ColumnName="navbarID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="News">
+      <EntityTypeMapping TypeName="webSiteDemoModel.News">
+        <MappingFragment StoreEntitySet="News">
+          <ScalarProperty Name="newsImage" ColumnName="newsImage" />
+          <ScalarProperty Name="newsPostDate" ColumnName="newsPostDate" />
+          <ScalarProperty Name="newsPostedBy" ColumnName="newsPostedBy" />
+          <ScalarProperty Name="newsCaption" ColumnName="newsCaption" />
+          <ScalarProperty Name="newsHeader" ColumnName="newsHeader" />
+          <ScalarProperty Name="newsQueue" ColumnName="newsQueue" />
+          <ScalarProperty Name="newsActivity" ColumnName="newsActivity" />
+          <ScalarProperty Name="newsID" ColumnName="newsID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Product">
+      <EntityTypeMapping TypeName="webSiteDemoModel.Product">
+        <MappingFragment StoreEntitySet="Product">
+          <ScalarProperty Name="productQueue" ColumnName="productQueue" />
+          <ScalarProperty Name="activity" ColumnName="activity" />
+          <ScalarProperty Name="productOrderID" ColumnName="productOrderID" />
+          <ScalarProperty Name="productImage" ColumnName="productImage" />
+          <ScalarProperty Name="productPrice" ColumnName="productPrice" />
+          <ScalarProperty Name="shortCaption" ColumnName="shortCaption" />
+          <ScalarProperty Name="productName" ColumnName="productName" />
+          <ScalarProperty Name="poductID" ColumnName="poductID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

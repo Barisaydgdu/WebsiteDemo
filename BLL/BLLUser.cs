@@ -33,6 +33,11 @@ namespace BLL
             DAL.webSiteDemoEntities1 vt = new DAL.webSiteDemoEntities1();
             return vt.User.Where(p => p.Email == email && p.Password == password && p.UserActivity == true).ToList();
 
+        }
+        public List<DAL.User> UserList()
+        {
+            DAL.webSiteDemoEntities1 vt = new DAL.webSiteDemoEntities1();
+            return vt.User.Where(p => p.UserActivity == true).ToList();
 
         }
     }

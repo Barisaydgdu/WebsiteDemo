@@ -102,7 +102,7 @@
 		</div>
 	</div>
 </div>
-
+		<asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
 <!-- footer -->
 <div class="footer-area">
 	<div class="container">

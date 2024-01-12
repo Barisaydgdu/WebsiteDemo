@@ -1,11 +1,81 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="webSiteDemoModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="About">
+    <Key>
+      <PropertyRef Name="aboutID" />
+    </Key>
+    <Property Name="aboutID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="aboutCaption" Type="nvarchar(max)" />
+    <Property Name="aboutHeader" Type="nvarchar" MaxLength="20" />
+    <Property Name="aboutLinks" Type="nvarchar(max)" />
+    <Property Name="activity" Type="bit" />
+  </EntityType>
+  <EntityType Name="AltSlider">
+    <Key>
+      <PropertyRef Name="AltSliderID" />
+    </Key>
+    <Property Name="AltSliderID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Baslik" Type="nvarchar(max)" />
+    <Property Name="OzetMetin" Type="nvarchar(max)" />
+    <Property Name="ImgUrl" Type="nvarchar(max)" />
+    <Property Name="TamMetin" Type="nvarchar(max)" />
+    <Property Name="EklenmeTarihi" Type="datetime" />
+    <Property Name="aktiflikDurumu" Type="bit" />
+    <Property Name="SiraNo" Type="int" />
+  </EntityType>
+  <EntityType Name="DealOfTheMonth">
+    <Key>
+      <PropertyRef Name="dealID" />
+    </Key>
+    <Property Name="dealID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="dealHeader" Type="nvarchar" MaxLength="50" />
+    <Property Name="dealCaption" Type="nvarchar(max)" />
+    <Property Name="dealImage" Type="nvarchar(max)" />
+    <Property Name="activity" Type="bit" />
+  </EntityType>
   <EntityType Name="LogType">
     <Key>
       <PropertyRef Name="LogTypeID" />
     </Key>
     <Property Name="LogTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="LogTypeName" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="Navbar">
+    <Key>
+      <PropertyRef Name="navbarID" />
+    </Key>
+    <Property Name="navbarID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="aktivity" Type="bit" />
+    <Property Name="queueNo" Type="int" />
+    <Property Name="header" Type="nvarchar(max)" />
+    <Property Name="icons" Type="nvarchar(max)" />
+    <Property Name="logo" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="News">
+    <Key>
+      <PropertyRef Name="newsID" />
+    </Key>
+    <Property Name="newsID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="newsActivity" Type="bit" />
+    <Property Name="newsQueue" Type="int" />
+    <Property Name="newsHeader" Type="nvarchar" MaxLength="50" />
+    <Property Name="newsCaption" Type="nvarchar(max)" />
+    <Property Name="newsPostedBy" Type="int" />
+    <Property Name="newsPostDate" Type="date" />
+    <Property Name="newsImage" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="poductID" />
+    </Key>
+    <Property Name="poductID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="productName" Type="nvarchar(max)" />
+    <Property Name="shortCaption" Type="nvarchar" MaxLength="50" />
+    <Property Name="productPrice" Type="nchar" MaxLength="10" />
+    <Property Name="productImage" Type="nvarchar(max)" />
+    <Property Name="productOrderID" Type="int" />
+    <Property Name="activity" Type="bit" />
+    <Property Name="productQueue" Type="int" />
   </EntityType>
   <EntityType Name="sysdiagrams">
     <Key>
@@ -62,7 +132,13 @@
     </ReferentialConstraint>
   </Association>
   <EntityContainer Name="webSiteDemoModelStoreContainer">
+    <EntitySet Name="About" EntityType="Self.About" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AltSlider" EntityType="Self.AltSlider" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DealOfTheMonth" EntityType="Self.DealOfTheMonth" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="LogType" EntityType="Self.LogType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Navbar" EntityType="Self.Navbar" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="News" EntityType="Self.News" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="UserAuthorization" EntityType="Self.UserAuthorization" Schema="dbo" store:Type="Tables" />

@@ -78,6 +78,7 @@
     <Content Include="WebsiteTest.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLLAltSlider.cs" />
     <Compile Include="BLLUser.cs" />
     <Compile Include="BllUserLog.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

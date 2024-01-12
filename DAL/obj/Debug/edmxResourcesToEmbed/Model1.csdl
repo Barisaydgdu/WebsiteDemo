@@ -27,7 +27,7 @@
     <Property Name="Password" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
     <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
     <Property Name="Surname" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-    <Property Name="RegisterDate" Type="DateTime" Nullable="false" />
+    <Property Name="RegisterDate" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="AuthorizationTypeID" Type="Int32" />
     <NavigationProperty Name="UserAuthorization" Relationship="Self.FK_User_UserAuthorization" FromRole="User" ToRole="UserAuthorization" />
     <Property Name="UserActivity" Type="Boolean" />
@@ -91,5 +91,81 @@
       <End Role="UserAuthorization" EntitySet="UserAuthorization" />
       <End Role="User" EntitySet="User" />
     </AssociationSet>
+    <EntitySet Name="About" EntityType="webSiteDemoModel.About" />
+    <EntitySet Name="AltSlider" EntityType="webSiteDemoModel.AltSlider" />
+    <EntitySet Name="DealOfTheMonth" EntityType="webSiteDemoModel.DealOfTheMonth" />
+    <EntitySet Name="Navbar" EntityType="webSiteDemoModel.Navbar" />
+    <EntitySet Name="News" EntityType="webSiteDemoModel.News" />
+    <EntitySet Name="Product" EntityType="webSiteDemoModel.Product" />
   </EntityContainer>
+  <EntityType Name="About">
+    <Key>
+      <PropertyRef Name="aboutID" />
+    </Key>
+    <Property Name="aboutID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="aboutCaption" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="aboutHeader" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="aboutLinks" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="activity" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="AltSlider">
+    <Key>
+      <PropertyRef Name="AltSliderID" />
+    </Key>
+    <Property Name="AltSliderID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Baslik" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="OzetMetin" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ImgUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="TamMetin" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="EklenmeTarihi" Type="DateTime" Precision="3" />
+    <Property Name="aktiflikDurumu" Type="Boolean" />
+    <Property Name="SiraNo" Type="Int32" />
+  </EntityType>
+  <EntityType Name="DealOfTheMonth">
+    <Key>
+      <PropertyRef Name="dealID" />
+    </Key>
+    <Property Name="dealID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="dealHeader" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="dealCaption" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="dealImage" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="activity" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="Navbar">
+    <Key>
+      <PropertyRef Name="navbarID" />
+    </Key>
+    <Property Name="navbarID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="aktivity" Type="Boolean" />
+    <Property Name="queueNo" Type="Int32" />
+    <Property Name="header" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="icons" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="logo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="News">
+    <Key>
+      <PropertyRef Name="newsID" />
+    </Key>
+    <Property Name="newsID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="newsActivity" Type="Boolean" />
+    <Property Name="newsQueue" Type="Int32" />
+    <Property Name="newsHeader" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="newsCaption" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="newsPostedBy" Type="Int32" />
+    <Property Name="newsPostDate" Type="DateTime" Precision="0" />
+    <Property Name="newsImage" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="poductID" />
+    </Key>
+    <Property Name="poductID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="productName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="shortCaption" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="productPrice" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="productImage" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="productOrderID" Type="Int32" />
+    <Property Name="activity" Type="Boolean" />
+    <Property Name="productQueue" Type="Int32" />
+  </EntityType>
 </Schema>

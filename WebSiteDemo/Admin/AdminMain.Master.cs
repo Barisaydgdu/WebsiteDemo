@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace WebSiteDemo.Admin
 {
-    public partial class AdminMain : System.Web.UI.MasterPage
+    public partial class AdminMain1 : System.Web.UI.MasterPage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -16,7 +16,7 @@ namespace WebSiteDemo.Admin
                 string girisDurumu = Session["LoginSucces"].ToString();
                 if (girisDurumu == "true")
                 {
-                    lblNameSurname.Text = Session["NameSurname"].ToString();
+                    lbl_AdSoyad.Text = Session["NameSurname"].ToString();
                 }
                 else
                 {
@@ -36,5 +36,6 @@ namespace WebSiteDemo.Admin
             Session.Abandon();
             Response.Redirect("userLogin.aspx");
         }
+    
     }
 }
