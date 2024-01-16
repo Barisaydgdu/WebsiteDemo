@@ -34,6 +34,9 @@
         
       </form>
         <asp:Label ID="lblMessage" runat="server"></asp:Label>
+        <asp:GridView ID="GridView1" runat="server" DataSourceID="ObjectDataSource1">
+        </asp:GridView>
+        <asp:ObjectDataSource ID="ObjectDataSource1" runat="server"></asp:ObjectDataSource>
     </div>
   </div>
 </div>

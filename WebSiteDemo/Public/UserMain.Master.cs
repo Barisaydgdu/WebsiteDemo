@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace WebSiteDemo.Public
 {
-    public partial class UserMain : System.Web.UI.MasterPage
+    public partial class userMain : System.Web.UI.MasterPage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
